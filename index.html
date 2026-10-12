@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Social-sharing preview for the published GitHub Pages URL. -->
+<meta name="description" content="A fun, mobile-friendly exercise reference made in minutes with AI, inspired by a family basketball game.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dunk Training | Interactive Exercise Reference">
+<meta property="og:description" content="A little AI creativity, a family basketball challenge, and a quick interactive reference for strength, plyometrics, and mobility.">
+<meta property="og:url" content="https://drwhelchel.github.io/dunk-training/">
+<meta property="og:image" content="https://drwhelchel.github.io/dunk-training/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dunk Training — an interactive exercise reference with a personalized basketball poster">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dunk Training | Interactive Exercise Reference">
+<meta name="twitter:description" content="A quick and fun exercise reference created with AI for strength, plyometrics, and mobility.">
+<meta name="twitter:image" content="https://drwhelchel.github.io/dunk-training/cover.jpg">
+<link rel="canonical" href="https://drwhelchel.github.io/dunk-training/">
+
+<title>Dunk Training — Exercise Reference</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0F0F0F;--surface:#181818;--surface2:#1E1E1E;--border:#252525;--border2:#2A2A2A;--orange:#FF6B1A;--text:#F0EBE0;--text-muted:#C8C4BC;--text-faint:#888;--text-dim:#666;--green:#2D6A4F;--red:#D4550A;--blue:#4A6FA5}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+.header{background:#1A1A1A;border-bottom:2px solid var(--orange);padding:20px 16px 14px;position:sticky;top:0;z-index:100}.header-eyebrow{font-family:Arial,sans-serif;font-size:10px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:4px}.header h1{font-size:22px;font-weight:700;letter-spacing:-.5px;color:var(--text)}.header-sub{font-family:Arial,sans-serif;font-size:12px;color:var(--text-faint);margin-top:4px}
+.filter-input{position:absolute;left:-9999px}.filters{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;background:#141414;border-bottom:1px solid var(--border2);scrollbar-width:none;position:sticky;top:83px;z-index:90}.filters::-webkit-scrollbar{display:none}.filter-btn{padding:6px 14px;border-radius:20px;border:1px solid #333;background:transparent;color:#999;font-family:Arial,sans-serif;font-size:12px;cursor:pointer;white-space:nowrap;letter-spacing:.5px;user-select:none}#filter-all:checked~.filters label[for=filter-all],#filter-strength:checked~.filters label[for=filter-strength],#filter-plyos:checked~.filters label[for=filter-plyos],#filter-core:checked~.filters label[for=filter-core]{background:var(--orange);border-color:var(--orange);color:#fff;font-weight:700}
+.content{padding:12px 16px 48px}.category-block{margin-bottom:28px}.category-label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:10px;padding-bottom:6px}.category-label.strength{color:var(--green);border-bottom:1px solid #2D6A4F40}.category-label.plyos{color:var(--red);border-bottom:1px solid #D4550A40}.category-label.core{color:var(--blue);border-bottom:1px solid #4A6FA540}.card-list{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}.card[open]{background:var(--surface2)}.card.strength[open]{border-color:#2D6A4F80}.card.plyos[open]{border-color:#D4550A80}.card.core[open]{border-color:#4A6FA580}.card-header{list-style:none;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.card-header::-webkit-details-marker{display:none}.card-left{display:flex;align-items:center;gap:12px}.card-icon{font-size:22px;flex-shrink:0}.card-name{font-size:15px;font-weight:700;color:var(--text)}.card-aka{font-family:Arial,sans-serif;font-size:11px;color:var(--text-dim);margin-top:1px}.card-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}.badge{font-family:Arial,sans-serif;font-size:10px;padding:3px 8px;border-radius:10px;letter-spacing:.5px;white-space:nowrap}.badge.beginner{background:#1A3A2A;color:#4CAF79}.badge.moderate{background:#2A2A1A;color:#D4A843}.badge.advanced{background:#3A1A1A;color:#E57373}.chevron{color:#555;font-size:13px;font-family:Arial,sans-serif;transition:transform .2s;display:inline-block}.card[open] .chevron{transform:rotate(180deg)}.card-detail{padding:0 16px 16px}.detail-divider{height:1px;background:var(--border2);margin-bottom:14px}.detail-section{margin-bottom:12px}.detail-label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}.detail-label.strength{color:var(--green)}.detail-label.plyos{color:var(--red)}.detail-label.core{color:var(--blue)}.detail-text{font-family:Arial,sans-serif;font-size:13px;color:var(--text-muted);line-height:1.7}.tip-box{background:#FF6B1A18;border:1px solid #FF6B1A30;border-radius:8px;padding:10px 12px;margin-top:12px}.tip-label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:4px}.tip-text{font-family:Arial,sans-serif;font-size:12px;color:#C8A882;line-height:1.6}.footer{text-align:center;padding:16px;font-family:Arial,sans-serif;font-size:11px;color:#444;border-top:1px solid #1A1A1A}
+#filter-strength:checked~.content .category-block:not(.strength),#filter-plyos:checked~.content .category-block:not(.plyos),#filter-core:checked~.content .category-block:not(.core){display:none}
+@media print{.header,.filters{position:static}.card-detail{display:block}body{background:#fff;color:#111}.card,.card[open]{break-inside:avoid;background:#fff;color:#111;border-color:#ccc}.detail-text{color:#222}.footer{color:#777}}
+</style>
+</head>
+<body>
+<input class="filter-input" type="radio" name="filter" id="filter-all" checked>
+<input class="filter-input" type="radio" name="filter" id="filter-strength">
+<input class="filter-input" type="radio" name="filter" id="filter-plyos">
+<input class="filter-input" type="radio" name="filter" id="filter-core">
+<div class="header"><div class="header-eyebrow">Dunk Training Program</div><h1>Exercise Reference</h1><div class="header-sub">Tap any exercise for full instructions</div></div>
+<nav class="filters" aria-label="Exercise filters">
+<label class="filter-btn" for="filter-all">All</label>
+<label class="filter-btn" for="filter-strength">Strength</label>
+<label class="filter-btn" for="filter-plyos">Plyometrics</label>
+<label class="filter-btn" for="filter-core">Core &amp; Mobility</label>
+</nav>
+<main class="content">
+<section class="category-block strength"><div class="category-label strength">Strength</div><div class="card-list">
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🏋️</span><div><div class="card-name">Trap Bar Deadlift</div><div class="card-aka">aka Hex Bar Deadlift</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Glutes, hamstrings, quads, lower back</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Stand inside a hexagonal (diamond-shaped) bar with handles on your sides. Feet hip-width apart. Hinge at the hips and bend your knees, grip the handles, then drive through your heels to stand tall. Lower back down with control. Much easier to learn than a traditional deadlift — the weight stays centered on your body.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">If your gym doesn&#x27;t have a trap bar, a regular dumbbell deadlift works fine to start.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🦵</span><div><div class="card-name">Bulgarian Split Squat</div><div class="card-aka">aka Rear-Foot Elevated Split Squat</div></div></div>
+    <div class="card-right"><span class="badge moderate">Moderate</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Quads, glutes, single-leg stability</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Stand about 2 feet in front of a bench. Place one foot behind you on the bench (laces down). Lower your back knee toward the floor by bending your front knee — like a lunge, but your rear foot is elevated. Keep your torso upright. Drive through your front heel to stand back up. Do all reps on one leg, then switch.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">This will feel awkward for the first few sessions. Use bodyweight only until balance is solid.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🏆</span><div><div class="card-name">Goblet Squat</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Quads, glutes, core, mobility</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Hold a single dumbbell or kettlebell vertically at your chest with both hands cupped around the top (like holding a goblet). Feet shoulder-width apart, toes slightly out. Squat down keeping the weight at your chest, elbows tracking inside your knees. Stand back up.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Great for building squat depth and mobility. A perfect starting exercise for your first few weeks.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">⬇️</span><div><div class="card-name">Romanian Deadlift (RDL)</div><div class="card-aka">aka Straight-Leg Deadlift</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Hamstrings, glutes, lower back</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Hold a barbell or dumbbells in front of your thighs, standing tall. With a slight bend in your knees (keep that bend constant), hinge forward at the hips — push your hips back while lowering the weight along your legs. You&#x27;ll feel a deep stretch in your hamstrings. When you feel that stretch, drive your hips forward to stand tall again. The knees barely move — this is a hip hinge, not a squat.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Think &#x27;push hips back&#x27; rather than &#x27;lower the weight.&#x27; Keep the bar close to your legs the whole time.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🦅</span><div><div class="card-name">Single-Leg Romanian Deadlift</div><div class="card-aka">aka 1-Leg RDL</div></div></div>
+    <div class="card-right"><span class="badge moderate">Moderate</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Hamstrings, glutes, balance</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Same movement as the RDL, but done on one leg. Hold a dumbbell in the opposite hand of your standing leg. Hinge at the hip, letting your non-standing leg float back behind you for balance as you lower the weight. Stand back up. Excellent for identifying strength imbalances between legs.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Go light — balance is the entire point here, not load. It&#x27;s much harder than it looks.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">⬆️</span><div><div class="card-name">Step-Ups (Explosive)</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Quads, glutes, single-leg power</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Stand in front of a sturdy box or bench (12–18 inches high). Step one foot up onto it, then drive explosively through that heel to bring your whole body up. Tap the opposite foot lightly on the box, then step back down. The key word is explosive — you&#x27;re not just stepping up, you&#x27;re powering up. Hold dumbbells at your sides for added resistance.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">The explosive push is what trains the fast-twitch muscle you need for dunking. Don&#x27;t let this become a slow grinding movement.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🔝</span><div><div class="card-name">Front Squat</div></div></div>
+    <div class="card-right"><span class="badge moderate">Moderate</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Quads, upper back, core</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">A barbell squat where the bar sits on the front of your shoulders (at your collarbone) instead of your back. Arms cross over the bar or you use a clean grip with elbows high. Requires a more upright torso and more quad strength than a back squat.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">If wrist or shoulder mobility is an issue, substitute a goblet squat — same muscle emphasis, zero equipment awkwardness.</div></div>
+  </div>
+</details>
+<details class="card strength">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">⚡</span><div><div class="card-name">Power Clean / Hang Clean</div></div></div>
+    <div class="card-right"><span class="badge advanced">Advanced</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label strength">Muscles Worked</div><div class="detail-text">Full body — explosive hip extension</div></div>
+    <div class="detail-section"><div class="detail-label strength">How to Do It</div><div class="detail-text">Hold dumbbells at your thighs. Bend knees slightly and hinge forward a bit. Then explosively extend your hips and shrug — use that momentum to catch the dumbbells at shoulder height with elbows forward. It&#x27;s a fast, athletic movement. The full barbell power clean is more technical.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Skip this one if it feels confusing — trap bar deadlifts and jump squats cover the same athletic qualities more safely.</div></div>
+  </div>
+</details></div></section><section class="category-block plyos"><div class="category-label plyos">Plyometrics</div><div class="card-list">
+<details class="card plyos">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">📦</span><div><div class="card-name">Box Jump</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label plyos">Muscles Worked</div><div class="detail-text">Explosive leg power, landing mechanics</div></div>
+    <div class="detail-section"><div class="detail-label plyos">How to Do It</div><div class="detail-text">Stand in front of a sturdy box (18–24 inches to start). Swing your arms back, bend your knees slightly, then explode upward and forward — landing softly on top of the box with both feet in a slight squat. Important: STEP back down one foot at a time. Do not jump back down.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Land quietly. If you&#x27;re landing loud, you&#x27;re not absorbing force properly — lower the box until landings are controlled.</div></div>
+  </div>
+</details>
+<details class="card plyos">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">💥</span><div><div class="card-name">Depth Jump</div><div class="card-aka">aka Drop Jump</div></div></div>
+    <div class="card-right"><span class="badge moderate">Moderate</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label plyos">Muscles Worked</div><div class="detail-text">Reactive leg power — the most important exercise in this program</div></div>
+    <div class="detail-section"><div class="detail-label plyos">How to Do It</div><div class="detail-text">Step (don&#x27;t jump) off a box 18–24 inches high. The moment both feet hit the ground, immediately explode upward as fast as possible — minimize your time on the ground. Think of the ground like a hot surface you want off immediately. This trains your tendons and nervous system to store and release energy like a spring.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Low volume is everything. 4 sets of 5 reps with full recovery between sets. If you&#x27;re doing 20 reps, you&#x27;ve turned it into cardio.</div></div>
+  </div>
+</details>
+<details class="card plyos">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">➡️</span><div><div class="card-name">Broad Jump</div><div class="card-aka">aka Standing Long Jump</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label plyos">Muscles Worked</div><div class="detail-text">Horizontal explosive power</div></div>
+    <div class="detail-section"><div class="detail-label plyos">How to Do It</div><div class="detail-text">Stand with feet hip-width apart. Swing arms back, bend knees, then explode forward and out as far as possible — landing on both feet. Try to land softly and stick the landing in balance. Rest fully and repeat.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Mark where you land each session. Tracking distance over weeks is one of the best ways to see real power gains.</div></div>
+  </div>
+</details>
+<details class="card plyos">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🚀</span><div><div class="card-name">Jump Squat</div><div class="card-aka">aka Squat Jump</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label plyos">Muscles Worked</div><div class="detail-text">Quads, glutes — bridging strength and power</div></div>
+    <div class="detail-section"><div class="detail-label plyos">How to Do It</div><div class="detail-text">Stand with feet shoulder-width apart. Lower into a quarter-squat (not a full squat), then explode upward as high as possible, leaving the ground completely. Land softly and reset. Bodyweight only to start. A light dumbbell (10–20 lb) at your chest can be added later.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Keep these explosive. The moment they start feeling like conditioning, you&#x27;re doing too many reps. Stop the set if jump height drops.</div></div>
+  </div>
+</details>
+<details class="card plyos">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🏃</span><div><div class="card-name">Continuous Broad Jumps</div><div class="card-aka">aka Bounding</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label plyos">Muscles Worked</div><div class="detail-text">Reactive power, coordination</div></div>
+    <div class="detail-section"><div class="detail-label plyos">How to Do It</div><div class="detail-text">Like a broad jump but in a chain — land and immediately explode into the next forward jump without pausing. Four to five jumps in a row equals one set. Focuses on the quick reactive transition between landing and jumping, similar to your legs during a running approach.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Quality over distance on every rep. Don&#x27;t let form fall apart chasing extra distance on the last jump.</div></div>
+  </div>
+</details></div></section><section class="category-block core"><div class="category-label core">Core &amp; Mobility</div><div class="card-list">
+<details class="card core">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">🐛</span><div><div class="card-name">Dead Bug</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label core">Muscles Worked</div><div class="detail-text">Deep core stability</div></div>
+    <div class="detail-section"><div class="detail-label core">How to Do It</div><div class="detail-text">Lie on your back, arms pointing straight up toward the ceiling, knees bent at 90 degrees in the air. Press your lower back firmly into the floor — keep it there the entire time. Slowly lower one arm overhead and the opposite leg toward the floor simultaneously, then return and switch sides.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">Go slow. This is not about speed. If your lower back arches off the floor, you&#x27;ve gone too far — shorten your range of motion.</div></div>
+  </div>
+</details>
+<details class="card core">
+  <summary class="card-header">
+    <div class="card-left"><span class="card-icon">💪</span><div><div class="card-name">Pallof Press</div><div class="card-aka">aka Anti-Rotation Press</div></div></div>
+    <div class="card-right"><span class="badge beginner">Beginner-Friendly</span><span class="chevron">▼</span></div>
+  </summary>
+  <div class="card-detail">
+    <div class="detail-divider"></div>
+    <div class="detail-section"><div class="detail-label core">Muscles Worked</div><div class="detail-text">Core stability, rotational resistance</div></div>
+    <div class="detail-section"><div class="detail-label core">How to Do It</div><div class="detail-text">Attach a resistance band to a fixed point at chest height. Stand sideways to the anchor point, feet shoulder-width, and hold the band at your chest with both hands. Press your hands straight out in front of you, hold 2 seconds, then bring back to your chest. The band is pulling you sideways — your job is to resist and stay square. Switch sides each set.</div></div>
+    <div class="tip-box"><div class="tip-label">💡 Tip</div><div class="tip-text">No bands? Swap this for a side plank. Same anti-rotation benefit, no equipment needed.</div></div>
+  </div>
+</details></div></section>
+</main>
+<div class="footer">Interactive HTML file — no internet required after download</div>
+</body>
+</html>
